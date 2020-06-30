@@ -1,21 +1,23 @@
 class UsergamesController < ApplicationController
     def index
         usergames = Usergame.all 
-        render json: usergames, adapter: :json_api
+       render json:usergames.to_json  
     end 
-
     def show
         usergame = Usergame.find(params[:id])
-        render json: usergame, adapter: :json_api
+        render json: usergame.to_json  
     end
     def create 
-        usergame = Usergame.new(usergame_params)
-        usergame.save
+        #game = Game.find_or_create_by(api_id: params[:api_id] need to add :id, :title, :platform, :genre, :release_date, :description, :metascore)
+        #make game first
+        # usergame = Usergame.new(user_id: params[:user_id], gameid: game.id)
+        # byebug
+        # usergame.save
+        # render json: usergame.to_json 
+        
     end 
-
     private 
-
     def usergame_params 
-        params.require(:usergame).permit(:game_id, :user_id)
+        params.require(:usergame).permit(:api_id, :game_id, :user_id)
     end 
 end

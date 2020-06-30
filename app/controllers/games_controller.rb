@@ -1,6 +1,22 @@
 class GamesController < ApplicationController
     def index 
-        @games = Game.all 
-        render json: @games
+        games = Game.all 
+        render json: games
+    end 
+
+    def show
+        game = Game.find(params[:id])
+        render json: game
+    end
+    
+    def create 
+        game = Game.create(game_params)
+        render json: game
+        
+    end 
+    
+    private 
+    def game_params 
+        params.require(:game).permit(:slug, :title, :platform, :genre, :release_date, :metascore)
     end 
 end
