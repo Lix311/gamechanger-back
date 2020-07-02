@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_153359) do
 
   create_table "games", force: :cascade do |t|
     t.string "slug"
+    t.string "image"
     t.string "title"
     t.string "platform"
     t.string "genre"
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_153359) do
     t.integer "likes"
     t.integer "dislikes"
     t.string "comments"
+    t.string "condition"
     t.string "loose_price"
     t.string "new_price"
     t.string "cib_price"

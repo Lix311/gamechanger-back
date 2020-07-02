@@ -10,14 +10,14 @@ class UsergamesController < ApplicationController
     def create 
         #game = Game.find_or_create_by(api_id: params[:api_id] need to add :id, :title, :platform, :genre, :release_date, :description, :metascore)
         #make game first
-        # usergame = Usergame.new(user_id: params[:user_id], gameid: game.id)
+        usergame = Usergame.new(usergame_params)
         # byebug
-        # usergame.save
-        # render json: usergame.to_json 
+        usergame.save
+        render json: usergame.to_json 
         
     end 
     private 
     def usergame_params 
-        params.require(:usergame).permit(:api_id, :game_id, :user_id)
+        params.require(:usergame).permit(:api_id,:game_id,:user_id)
     end 
 end

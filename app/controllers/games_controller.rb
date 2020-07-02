@@ -17,6 +17,6 @@ class GamesController < ApplicationController
     
     private 
     def game_params 
-        params.require(:game).permit(:slug, :title, :platform, :genre, :release_date, :metascore)
+        params.require(:game).permit(:slug, :image, :title, :platform, :genre, :release_date, :metascore, :condition, :loose_price, :new_price, :cib_price)
     end 
 end
