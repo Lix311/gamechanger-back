@@ -25,6 +25,7 @@ class GamesController < ApplicationController
         game = Game.find(params[:id])
         game.destroy
         
+        
     end 
     
     private 
