@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_153359) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
+    t.boolean "sold"
     t.string "slug"
     t.string "image"
     t.string "title"

@@ -1,6 +1,7 @@
 class CreateGames < ActiveRecord::Migration[6.0]
   def change
     create_table :games do |t|
+      t.boolean :sold
       t.string :slug
       t.string :image
       t.string :title
